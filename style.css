@@ -476,3 +476,10 @@ html{scroll-behavior:smooth}body{font-family:"Prompt","Noto Sans Thai",system-ui
 
 /* Keep footer visually continuous and identical on every page */
 html,body{margin:0;min-height:100%;background:#0c1916}main{background:#fff}.pro-footer{width:100%;margin:0!important;background:#0c1916!important}.footer-bottom{background:#0c1916!important;margin-bottom:0!important}.footer-bottom .shell{padding-bottom:0}body>script:last-child{display:none}
+
+/* Fix short inner pages: footer stays at viewport bottom without artificial gap */
+body.inner-page{min-height:100vh;display:flex;flex-direction:column;background:#f4f6f5}
+body.inner-page>.site-header,body.inner-page>.page-hero,body.inner-page>.pro-footer{flex:0 0 auto}
+body.inner-page>main{flex:1 0 auto;display:flex;flex-direction:column;background:#f4f6f5}
+body.inner-page>main>.inner-content{flex:1 0 auto;width:100%;margin:0}
+body.inner-page>.pro-footer{margin-top:0!important}
