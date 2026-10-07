@@ -1,0 +1,449 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  background: #f4f4f4;  /* พื้นหลังหลัก */
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 0 0 40px 40px;
+}
+
+/* Section content */
+section {
+  padding: 60px 20px;
+  margin: 40px auto;
+  max-width: 1100px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header p {
+  margin: 5px 0 15px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  position: relative;
+}
+
+nav a:hover,
+nav a.active {
+  color: #1abc9c;
+}
+
+nav a.active::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #1abc9c;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+}
+
+
+/* Welcome Section */
+.highlight {
+  text-align: center;
+  background: url("img/bg-welcome.jpg") center/cover no-repeat; /* ใส่รูปพื้นหลัง */
+  color: white;
+  padding: 80px 20px;   /* ลดความสูงจาก 100px → 80px */
+  margin-bottom: 60px;
+  position: relative;
+  border-radius: 0 0 40px 40px;  /* ทำมุมโค้งล่างให้ดูแยกชัด */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);   /* เพิ่มเลเยอร์ดำโปร่งใสให้อ่านง่าย */
+  border-radius: 0 0 40px 40px;
+}
+
+.highlight h2, 
+.highlight p {
+  position: relative;
+  z-index: 1;
+}
+
+.highlight h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.highlight p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* CONTENT BOX */
+.content-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 50px 40px;
+  margin: 60px auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.content-box h2 {
+  margin-bottom: 25px;
+  color: #2c3e50;
+  font-size: 24px;
+  text-align: center;
+}
+.content-box h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #1abc9c;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.content-box p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: left;      /* ชิดซ้าย */
+  text-indent: 2em;      /* ย่อหน้า */
+}
+.content-box strong {
+  color: #1abc9c;
+}
+
+/* SERVICES */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;   /* ให้การ์ดชิดซ้าย */
+  padding-right: 0;  /* ให้การ์ดชิดขวา */
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+/* หัวข้อโครงการอยู่กลาง */
+.service-card h3 {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+/* ขอบเขตงานชิดซ้าย */
+.service-card p {
+  text-align: left;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+.service-card .scope {
+  text-align: left;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+
+
+/* STATS */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 60px auto;
+  max-width: 900px;
+}
+.stat-box {
+  flex: 1;
+  background: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+.stat-box h3 {
+  font-size: 36px;
+  color: #1abc9c;
+  margin-bottom: 15px;
+}
+.stat-box p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  background: #2c3e50;
+  color: white;
+  padding: 30px 15px;
+  margin-top: 80px;
+}
+/* ตารางราคาค่าบริการ */
+.pricing-table {
+  width: 100%;
+  max-width: 950px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pricing-table th, 
+.pricing-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.pricing-table th {
+  background: #2c3e50;
+  color: #fff;
+  font-weight: bold;
+}
+
+.pricing-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.pricing-table tr:hover {
+  background: #f1f1f1;
+}
+
+/* ให้คอลัมน์ รายการบริการ กว้างขึ้น */
+.pricing-table .service-col {
+  text-align: left;
+  width: 50%;
+  padding-left: 20px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-top: 20px;
+}
+.contact-form label {
+  margin: 5px 0;
+  font-weight: bold;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.contact-form button {
+  background: #1a3c54;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.contact-form button:hover {
+  background: #2a5c7c;
+}
+.contact {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact h2, .contact h3 {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #19334d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #145a8d;
+}
+
+.contact-info {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin: 6px 0;
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  margin-right: 15px;
+  display: inline-block;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+/* ใช้เฉพาะหน้า "ผลงาน" */
+.portfolio-section {
+  padding: 60px 0;       /* ซ้าย-ขวา = 0, บน-ล่างยังมี */
+  margin: 40px auto;
+  max-width: 1100px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+/* Portfolio Section (ชิดซ้าย-ขวาสุด) */
+section.portfolio-section {
+  padding: 60px 0;     /* บน-ล่าง 60px, ซ้าย-ขวา = 0 */
+  margin: 40px auto;
+  max-width: 1100px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+/* ใช้กับ section portfolio */
+#portfolio {
+  padding: 60px 40px;  /* เพิ่ม padding ซ้าย-ขวา = 40px */
+  margin: 40px auto;
+  max-width: 1200px;   /* กำหนดความกว้างสูงสุด */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+#portfolio h2 {
+  margin-bottom: 30px;   /* เว้นระยะหัวข้อกับการ์ด */
+}
+
+
+
+
