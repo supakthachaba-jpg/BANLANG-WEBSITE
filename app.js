@@ -13,9 +13,8 @@ async function loadPortfolio(){
   ]);
   const cats=[...new Set(rows.map(x=>x.category).filter(Boolean))];
   root.innerHTML='<div class="portfolio-filters"><button class="active" data-cat="all">ทั้งหมด</button>'+cats.map(c=>'<button data-cat="'+escHtml(c)+'">'+escHtml(c)+'</button>').join('')+'</div><div class="portfolio-list">'+rows.map(x=>{
-   const gallery=imgs.filter(i=>String(i.project_id)===String(x.id)).map(i=>i.image_url);
-   if(x.cover_url&&!gallery.includes(x.cover_url))gallery.unshift(x.cover_url);
-   const pics=gallery.length?gallery:['img/design.jpg'];
+   const gallery=imgs.filter(i=>String(i.project_id)===String(x.id)).map(i=>i.image_url).filter(Boolean);
+   const pics=gallery.length?gallery:(x.cover_url?[x.cover_url]:['img/design.jpg']);
    return '<article class="portfolio-card" data-category="'+escHtml(x.category||'')+'"><div class="project-gallery"><button class="gallery-nav prev" aria-label="รูปก่อนหน้า">‹</button><div class="gallery-track">'+pics.map((u,i)=>'<img src="'+escHtml(u)+'" alt="'+escHtml(x.title)+' รูปที่ '+(i+1)+'" loading="lazy" onerror="this.onerror=null;this.src=\'img/design.jpg\'">').join('')+'</div><button class="gallery-nav next" aria-label="รูปถัดไป">›</button><div class="gallery-count">1 / '+pics.length+'</div></div><div class="portfolio-copy"><div class="portfolio-meta">'+(x.category?'<span class="tag">'+escHtml(x.category)+'</span>':'')+(x.year?'<span>'+x.year+'</span>':'')+'</div><h3>'+escHtml(x.title)+'</h3><p><strong>ขอบเขตงาน :</strong> '+escHtml(x.scope||'-')+'</p>'+(x.location?'<small>'+escHtml(x.location)+'</small>':'')+'</div></article>';
   }).join('')+'</div>';
   root.querySelectorAll('.portfolio-filters button').forEach(btn=>btn.onclick=()=>{root.querySelectorAll('.portfolio-filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');root.querySelectorAll('.portfolio-card').forEach(card=>card.hidden=btn.dataset.cat!=='all'&&card.dataset.category!==btn.dataset.cat)});
