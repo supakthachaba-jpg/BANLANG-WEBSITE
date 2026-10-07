@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 🔹 Meta Tags สำหรับ SEO -->
+  <meta name="title" content="หจก. บัลลังก์ดีไซน์และก่อสร้าง | ออกแบบ เขียนแบบ ก่อสร้างครบวงจร">
+  <meta name="description" content="รับออกแบบบ้าน เขียนแบบ คำนวณโครงสร้าง ประมาณราคา และงานก่อสร้างครบวงจร โดยทีมวิศวกรผู้เชี่ยวชาญ">
+  <meta name="keywords" content="ออกแบบบ้าน, เขียนแบบ, ก่อสร้าง, วิศวกรโยธา, BOQ, รับเหมาก่อสร้าง">
+  <meta name="author" content="หจก. บัลลังก์ดีไซน์และก่อสร้าง">
+  <title>หจก. บัลลังก์ดีไซน์และก่อสร้าง</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Prompt", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* ดัน footer ลงล่าง */
+    }
+
+    main {
+      flex: 1; /* ให้ main ดัน footer ลงไป */
+    }
+
+    .contact-container {
+      max-width: 500px; /* ✅ กล่องฟอร์มไม่ใหญ่เกิน */
+      margin: 40px auto;
+      padding: 25px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      color: #1d3557;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: grid;
+      grid-gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #1d3557;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #457b9d;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+
+    .social-links {
+      margin-top: 12px;
+    }
+
+    .social-links a {
+      margin-right: 12px;
+      display: inline-block;
+    }
+
+    .social-links img {
+      width: 28px;
+      height: 28px;
+      vertical-align: middle;
+    }
+
+    footer {
+      background: #1d3557;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: auto; /* ✅ ฟุตเตอร์ชิดล่างเสมอ */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <h1>ห้างหุ้นส่วนจำกัด บัลลังก์ดีไซน์และก่อสร้าง</h1>
+      <p>รับออกแบบ เขียนแบบ คำนวณโครงสร้าง ประมาณราคา และงานก่อสร้างครบวงจร</p>
+      <nav>
+        <a href="index.html">หน้าแรก</a>
+        <a href="services.html">บริการ</a>
+        <a href="portfolio.html">ผลงาน</a>
+        <a href="pricing.html">ราคาค่าบริการ</a>
+        <a href="contact.html">ติดต่อเรา</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="contact-container">
+      <h2>ติดต่อเรา</h2>
+
+      <!-- ✅ ฟอร์มอยู่ในกล่อง -->
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+
+        <label for="fname">ชื่อ:</label>
+        <input type="text" id="fname" name="fname" placeholder="กรอกชื่อของคุณ" required>
+
+        <label for="email">อีเมล:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+        <label for="subject">หัวข้อ:</label>
+        <input type="text" id="subject" name="subject" placeholder="กรอกหัวข้อ" required>
+
+        <label for="message">เนื้อหา:</label>
+        <textarea id="message" name="message" placeholder="เขียนสิ่งที่คุณต้องการสอบถาม..." required></textarea>
+
+        <button type="submit">ส่งข้อความ</button>
+      </form>
+
+      <div class="contact-info">
+        <p><strong>โทร:</strong> 095-638-0017</p>
+        <p><strong>อีเมล:</strong> banlangdesign.construction@gmail.com</p>
+        <p><strong>ที่อยู่สำนักงานใหญ่:</strong> 43/2 ม.7 ต.ขุนศรี อ.ไทรน้อย จ.นนทบุรี 11150</p>
+        <p><strong>ที่อยู่ที่ติดต่อได้:</strong> 117/732 ม.1 ต.บางพูด อ.เมืองปทุมธานี จ.ปทุมธานี 12000</p>
+
+        <div class="social-links">
+          <a href="https://lin.ee/4x7Tx9C" target="_blank">
+            <img src="img/line.png" alt="Line"> 
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61574730574677" target="_blank">
+            <img src="img/facebook.png" alt="Facebook"> 
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 หจก. บัลลังก์ดีไซน์และก่อสร้าง | ออกแบบและก่อสร้างสรรค์ด้วยความใส่ใจ</p>
+  </footer>
+</body>
+</html>
+
+
+
